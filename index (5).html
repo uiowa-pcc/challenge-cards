@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore Careers Through Challenges</title>
+<style>
+:root{
+  --yellow:#FFCD00;
+  --black:#111;
+  --gray:#f3f3f3;
+  --mid:#666;
+  --border:#d8d8d8;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--black);
+  background:#fff;
+  line-height:1.5;
+}
+.wrap{max-width:900px;margin:0 auto;padding:28px 20px 48px}
+.kicker{
+  display:inline-block;
+  border-left:6px solid var(--yellow);
+  padding-left:10px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+h1{font-size:2rem;line-height:1.15;margin:.2rem 0 .6rem}
+h2{font-size:1.35rem;margin:0 0 .6rem}
+p{margin:.4rem 0 1rem}
+.intro{font-size:1.05rem;color:#333;max-width:760px}
+.progress{
+  display:flex;gap:8px;margin:24px 0 28px;flex-wrap:wrap
+}
+.progress span{
+  flex:1 1 120px;
+  padding:8px 10px;
+  text-align:center;
+  background:var(--gray);
+  border-radius:6px;
+  font-size:.9rem;
+}
+.progress .active{font-weight:700;outline:2px solid #bbb}
+.card{
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px;
+  margin:0 0 18px;
+  background:var(--white);
+}
+.note{
+  background:#fafafa;
+  border-left:5px solid var(--yellow);
+  padding:14px 16px;
+  margin:16px 0;
+}
+label{display:block;font-weight:700;margin:12px 0 6px}
+input[type=text], textarea, select{
+  width:100%;
+  border:1px solid #aaa;
+  border-radius:6px;
+  padding:11px 12px;
+  font:inherit;
+  background:#fff;
+}
+textarea{min-height:86px;resize:vertical}
+.choices{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:10px;
+  margin-top:10px;
+}
+.choice{
+  border:1px solid #bbb;
+  border-radius:7px;
+  padding:11px 12px;
+  cursor:pointer;
+  background:#fff;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+.choice:hover{background:#f7f7f7}
+.choice input{margin-top:3px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button,.buttonlink{
+  appearance:none;
+  border:1px solid #999;
+  border-radius:7px;
+  background:#f1f1f1;
+  color:#111;
+  padding:11px 16px;
+  font-weight:700;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-block;
+}
+button:hover,.buttonlink:hover{background:#e7e7e7}
+.primary{
+  border-color:#777;
+  background:#e9e9e9;
+}
+.hidden{display:none}
+.summary{
+  white-space:pre-wrap;
+  background:#fafafa;
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:15px;
+}
+.small{font-size:.9rem;color:var(--mid)}
+.footerlink{margin-top:22px;font-size:.95rem}
+@media (max-width:600px){
+  h1{font-size:1.65rem}
+  .card{padding:18px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="kicker">Career Exploration Quick Activity</div>
+  <h1>Explore Careers Through Challenges</h1>
+  <p class="intro">Instead of starting with a job title, start with a challenge, problem, or opportunity you care about. Use SparkPath Challenge Cards and Path Explorer to discover possibilities, then choose one direction worth investigating.</p>
+
+  <div class="progress" aria-label="Activity progress">
+    <span id="p1" class="active">1. Sort</span>
+    <span id="p2">2. Notice</span>
+    <span id="p3">3. Explore</span>
+    <span id="p4">4. Next step</span>
+  </div>
+
+  <section class="card" id="step1">
+    <h2>1. Complete the Challenge Cards</h2>
+    <p>Use SparkPath to sort challenges based on what feels most interesting or meaningful to you. Focus on what catches your attention—not on whether you already know a career connected to it.</p>
+    <div class="note">
+      <strong>Keep in mind:</strong> The goal is not to find the “right” career. It is to notice the kinds of problems and opportunities you may want to contribute to.
+    </div>
+    <a class="buttonlink primary" href="https://app.mysparkpath.com/" target="_blank" rel="noopener">Open SparkPath Challenge Cards ↗</a>
+
+    <p class="small">Return here when you have your top challenges.</p>
+
+    <label for="challenge1">Top challenge 1</label>
+    <input id="challenge1" type="text" placeholder="Enter the challenge that stood out most">
+
+    <label for="challenge2">Top challenge 2</label>
+    <input id="challenge2" type="text" placeholder="Enter another challenge">
+
+    <label for="challenge3">Top challenge 3</label>
+    <input id="challenge3" type="text" placeholder="Enter another challenge">
+
+    <div class="btnrow">
+      <button type="button" onclick="go(2)">Next</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="step2">
+    <h2>2. Notice the pattern</h2>
+    <p>Look across your top challenges. What seems to connect them?</p>
+
+    <div class="choices">
+      <label class="choice"><input type="checkbox" name="theme" value="Helping or supporting people">Helping or supporting people</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Improving systems or processes">Improving systems or processes</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Creating or designing">Creating or designing</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Understanding people or behavior">Understanding people or behavior</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Solving technical or scientific problems">Solving technical or scientific problems</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Protecting, advocating, or creating change">Protecting, advocating, or creating change</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Discovering or analyzing information">Discovering or analyzing information</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Teaching or explaining">Teaching or explaining</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Improving health or well-being">Improving health or well-being</label>
+      <label class="choice"><input type="checkbox" name="theme" value="Strengthening communities">Strengthening communities</label>
+    </div>
+
+    <label for="patternOther">Something else you notice</label>
+    <input id="patternOther" type="text" placeholder="Optional">
+
+    <div class="btnrow">
+      <button type="button" onclick="go(1)">Back</button>
+      <button type="button" onclick="go(3)">Next</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="step3">
+    <h2>3. Use Path Explorer</h2>
+    <p>Choose one of your top challenges and use SparkPath Path Explorer to see how that challenge connects to real work and learning.</p>
+
+    <label for="focusChallenge">Challenge I want to investigate</label>
+    <select id="focusChallenge">
+      <option value="">Choose one</option>
+    </select>
+
+    <div class="note">
+      <strong>Your research mission:</strong> Find one career or job, one organization or company, and one learning opportunity connected to the challenge.
+    </div>
+
+    <p class="small">Open Path Explorer from your SparkPath account or Challenge Card results. Access may depend on your school’s SparkPath subscription.</p>
+
+    <label for="careerFound">A career or job I discovered</label>
+    <input id="careerFound" type="text" placeholder="What did you find?">
+
+    <label for="orgFound">An organization or company doing this work</label>
+    <input id="orgFound" type="text" placeholder="What organization caught your attention?">
+
+    <label for="learningFound">A learning opportunity connected to it</label>
+    <input id="learningFound" type="text" placeholder="Major, course, skill, credential, experience, etc.">
+
+    <label for="reaction">After exploring, this direction feels...</label>
+    <select id="reaction">
+      <option value="">Choose one</option>
+      <option>More interesting</option>
+      <option>Still interesting, but I need more information</option>
+      <option>Less interesting than I expected</option>
+      <option>It led me to a different idea</option>
+    </select>
+
+    <div class="btnrow">
+      <button type="button" onclick="go(2)">Back</button>
+      <button type="button" onclick="go(4)">Next</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="step4">
+    <h2>4. Choose your next step</h2>
+    <p>Career exploration gets more useful when you do something with what you learned. Choose the next step that would help you most.</p>
+
+    <div class="choices">
+      <label class="choice"><input type="radio" name="next" value="Research one career I found">Research one career I found</label>
+      <label class="choice"><input type="radio" name="next" value="Explore another Challenge Card">Explore another Challenge Card</label>
+      <label class="choice"><input type="radio" name="next" value="Use Path Explorer with another challenge">Use Path Explorer with another challenge</label>
+      <label class="choice"><input type="radio" name="next" value="Find a related course or major">Find a related course or major</label>
+      <label class="choice"><input type="radio" name="next" value="Look for an internship, volunteer, or hands-on experience">Look for an internship, volunteer, or hands-on experience</label>
+      <label class="choice"><input type="radio" name="next" value="Talk with someone doing this kind of work">Talk with someone doing this kind of work</label>
+      <label class="choice"><input type="radio" name="next" value="Explore a related Iowa Career Community">Explore a related Iowa Career Community</label>
+      <label class="choice"><input type="radio" name="next" value="Compare this direction with another option">Compare this direction with another option</label>
+    </div>
+
+    <div class="btnrow">
+      <button type="button" onclick="go(3)">Back</button>
+      <button type="button" class="primary" onclick="finish()">Create my exploration snapshot</button>
+    </div>
+  </section>
+
+  <section class="card hidden" id="results" aria-live="polite">
+    <h2>Your exploration snapshot</h2>
+    <p>This is not a career decision. It is a record of one direction that may be worth learning more about.</p>
+    <div id="summary" class="summary"></div>
+    <div class="btnrow">
+      <button type="button" onclick="copySummary()">Copy my snapshot</button>
+      <button type="button" onclick="go(1)">Start over / change answers</button>
+      <a class="buttonlink" href="https://careers.uiowa.edu/career-communities" target="_blank" rel="noopener">Browse Iowa Career Communities ↗</a>
+    </div>
+  </section>
+
+  <p class="footerlink small">SparkPath Challenge Cards and Path Explorer are external SparkPath tools. This activity does not reproduce Challenge Card content; it helps you reflect on and apply your SparkPath results.</p>
+</main>
+
+<script>
+function syncChallenges(){
+  const vals=[1,2,3].map(n=>document.getElementById('challenge'+n).value.trim()).filter(Boolean);
+  const sel=document.getElementById('focusChallenge');
+  const current=sel.value;
+  sel.innerHTML='<option value="">Choose one</option>';
+  vals.forEach(v=>{
+    const o=document.createElement('option');
+    o.value=v;o.textContent=v;sel.appendChild(o);
+  });
+  if(vals.includes(current)) sel.value=current;
+}
+function go(n){
+  syncChallenges();
+  [1,2,3,4].forEach(i=>{
+    document.getElementById('step'+i).classList.toggle('hidden',i!==n);
+    document.getElementById('p'+i).classList.toggle('active',i===n);
+  });
+  document.getElementById('results').classList.add('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function finish(){
+  const challenges=[1,2,3].map(n=>document.getElementById('challenge'+n).value.trim()).filter(Boolean);
+  const themes=[...document.querySelectorAll('input[name="theme"]:checked')].map(x=>x.value);
+  const other=document.getElementById('patternOther').value.trim();
+  if(other) themes.push(other);
+  const next=document.querySelector('input[name="next"]:checked');
+  const summary =
+`My top challenges:
+${challenges.length ? challenges.map((x,i)=>`${i+1}. ${x}`).join('\n') : 'Not entered'}
+
+Pattern I noticed:
+${themes.length ? themes.join('; ') : 'Not entered'}
+
+Challenge I investigated:
+${document.getElementById('focusChallenge').value || 'Not entered'}
+
+Career/job I discovered:
+${document.getElementById('careerFound').value.trim() || 'Not entered'}
+
+Organization/company:
+${document.getElementById('orgFound').value.trim() || 'Not entered'}
+
+Learning opportunity:
+${document.getElementById('learningFound').value.trim() || 'Not entered'}
+
+After exploring:
+${document.getElementById('reaction').value || 'Not entered'}
+
+My next step:
+${next ? next.value : 'Not selected'}`;
+  document.getElementById('summary').textContent=summary;
+  document.getElementById('step4').classList.add('hidden');
+  document.getElementById('results').classList.remove('hidden');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+async function copySummary(){
+  const text=document.getElementById('summary').textContent;
+  try{
+    await navigator.clipboard.writeText(text);
+    alert('Exploration snapshot copied.');
+  }catch(e){
+    alert('Copy was blocked by your browser. Select the text and copy it manually.');
+  }
+}
+</script>
+</body>
+</html>
