@@ -1,3 +1,57 @@
+I built the standalone Challenge Cards + Path Explorer activity in the same spirit as your other quick tools.
+
+Download the Challenge Cards + Path Explorer HTML
+
+It is designed to take about 10–15 minutes and follows this flow:
+
+1. Sort
+Students open SparkPath Challenge Cards and enter their top 3 challenges.
+
+2. Notice
+They identify a quick pattern across those challenges—helping people, improving systems, solving scientific problems, creating, advocating, teaching, etc.
+
+3. Explore
+They choose one challenge and use Path Explorer to find:
+
+one career/job
+one company or organization
+one learning opportunity
+
+SparkPath specifically describes Path Explorer as the follow-up after students identify their top Challenge Cards, connecting challenges to companies, jobs, and learning opportunities.
+
+4. Next step
+They decide whether the direction became more or less interesting and select one concrete exploration action.
+
+At the end it produces a copyable Exploration Snapshot rather than another long reflection.
+
+I also intentionally did not recreate the Challenge Cards themselves in the GitHub tool. Students use your licensed SparkPath experience for the proprietary sort, then this activity structures the learning around it.
+
+I think this pairs cleanly with What Could Fit? because the outputs are different:
+
+What Could Fit? → generates possible career directions from me
+Challenge Cards + Path Explorer → discovers possibilities through problems I care about
+
+That keeps them complementary rather than repetitive. 
+
+challenge-cards-path-explorer.html
+HTML
+Today 5:02 AM
+sparkpath link should lead here - https://app.mysparkpath.com/signup prompt using code UniversityofIowa
+
+Updated. The SparkPath button now goes to the signup page, and the activity clearly tells University of Iowa students to use the code UniversityofIowa.
+
+Download the updated Challenge Cards + Path Explorer HTML
+
+The student-facing instructions now say to open SparkPath, sign up, use the code UniversityofIowa, complete the Challenge Cards, and then return to the activity with their top challenges. 
+
+challenge-cards-path-explorer-uiowa.html
+HTML
+remove the yellow bar and sentence that starts with university of iowa students
+
+Done. I removed both the top yellow bar and the sentence beginning “University of Iowa students…”.
+
+Download the cleaned Challenge Cards + Path Explorer HTML 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -122,7 +176,6 @@ button:hover,.buttonlink:hover{background:#e7e7e7}
 </head>
 <body>
 <main class="wrap">
-  <div class="kicker">Career Exploration Quick Activity</div>
   <h1>Explore Careers Through Challenges</h1>
   <p class="intro">Instead of starting with a job title, start with a challenge, problem, or opportunity you care about. Use SparkPath Challenge Cards and Path Explorer to discover possibilities, then choose one direction worth investigating.</p>
 
@@ -139,9 +192,9 @@ button:hover,.buttonlink:hover{background:#e7e7e7}
     <div class="note">
       <strong>Keep in mind:</strong> The goal is not to find the “right” career. It is to notice the kinds of problems and opportunities you may want to contribute to.
     </div>
-    <a class="buttonlink primary" href="https://app.mysparkpath.com/" target="_blank" rel="noopener">Open SparkPath Challenge Cards ↗</a>
+    <a class="buttonlink primary" href="https://app.mysparkpath.com/signup" target="_blank" rel="noopener">Open SparkPath &amp; Sign Up ↗</a>
 
-    <p class="small">Return here when you have your top challenges.</p>
+    <p class="small">Use code <strong>UniversityofIowa</strong> when prompted, then complete the Challenge Cards. Return here when you have your top challenges.</p>
 
     <label for="challenge1">Top challenge 1</label>
     <input id="challenge1" type="text" placeholder="Enter the challenge that stood out most">
@@ -325,3 +378,5 @@ async function copySummary(){
 </script>
 </body>
 </html>
+challenge-cards-path-explorer-clean.html
+HTML
